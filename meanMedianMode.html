@@ -26,19 +26,35 @@
         });
         var median;
 
-        if(arr.length % 2 === 0){
+        if (arr.length % 2 === 0) {
             median = arr[Math.floor(array.length / 2)];
         }
         else {
-            var midOdd = arr[arr.length/ 2 - 1];
-            var mid = arr[arr.length/ 2];
+            var midOdd = arr[arr.length / 2 - 1];
+            var mid = arr[arr.length / 2];
             median = (mid + midOdd) / 2;
         }
         return median;
     }
 
     function getMode(arr) {
+        var modeObj = {};
+        arr.forEach(num => {
+            if (!modeObj[num]) modeObj[num] = 0;
+            modeObj[num]++;
+        });
 
+        var maxFreq = 0;
+        var modes = [];
+        for (var num in modeObj){
+            if(modeObj[num] > maxFreq){
+                modes = [ num ];
+                maxFreq = modeObj[num];
+            }
+            else if(modeObj[num] === maxFreq) modes.push(num);
+        }
+        if(modes.length === Object.keys(modeObj).length)modes = [];
+        return modes;
     }
 
     function meanMedianMode(arr) {
@@ -48,6 +64,8 @@
             mode: getMode(arr)
         }
     }
+
+    meanMedianMode([1,3,7,4,8,9,9,9,3,4,5]);
 </script>
 </body>
 </html>
