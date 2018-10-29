@@ -27,6 +27,12 @@ function tickets(peopleInLine) {
 }
 
 
+
+
+
+
+
+
 function Clerk(name) {
     this.name = name;
 
