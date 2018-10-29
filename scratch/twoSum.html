@@ -39,7 +39,7 @@
     */
 
     function twoSum(numArr, sum){
-        var sumArr = []
+        var sumArr = [];
         numArr.forEach(function(number){
             for(var i = 0; i < numArr.length; i ++){
                 if (number == numArr[i]){
@@ -49,7 +49,7 @@
                     sumArr.push([number, numArr[i]])
                 }
             }
-        })
+        });
         return sumArr;
     }
 
