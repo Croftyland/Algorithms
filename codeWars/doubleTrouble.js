@@ -7,3 +7,15 @@ function trouble(x, t) {
     }
     return x;
 }
+
+function trouble(x, t){
+    let i = 0, l = x.length - 1;
+    while (i < l) {
+        if (x[i] + x[i + 1] === t) {
+            x.splice(i + 1, 1);
+        } else {
+            i++;
+        }
+    }
+    return x;
+}
