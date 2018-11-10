@@ -29,7 +29,24 @@
 //
 // true if A and B are similar, false otherwise.
 
-function areSimilar(arr1, arr2) {
-    let a1 = arr1.sort(), a2 = arr2.sort();
-    return a1.length === a2.length && a1.every((v, i) => v === a2[i]);
+function areSimilar(A, B) {
+    if (A.reduce(function (a, b) {
+        return a + b;
+    }) != B.reduce(function (x, y) {
+        return x + y;
+    })) {
+        return false;
+    }
+    var t = [];
+    for (var i = 0; i < A.length; i++) {
+        if (A[i] != B[i]) {
+            t.push(i);
+        }
+    }
+
+    if (t.length > 2) {
+        return false;
+    } else {
+        return true;
+    }
 }
