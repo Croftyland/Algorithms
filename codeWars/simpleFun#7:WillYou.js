@@ -47,3 +47,7 @@ Input/Output
 function willYou(young, beautiful, loved) {
     return (young && beautiful && !loved) || (loved && (!young || !beautiful));
 }
+
+function willYou(young, beautiful, loved) {
+    return (young && beautiful) !== loved;
+}
