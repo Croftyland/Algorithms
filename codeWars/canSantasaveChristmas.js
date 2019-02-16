@@ -23,9 +23,9 @@ This kata is part of the Collection "Date fundamentals":
     #4 Christmas Present Calculator
 */
 function determineTime(durations){
-    let totSecs = durations.map(v => {
-        let arr = v.split(':');
-        return +arr[0] * 3600 + +arr[1] * 60 + +arr[2];
-    }).reduce((t, v) => t + v, 0);
-    return totSecs / 3600 <= 24;
+  let totSecs = durations.map(v => {
+    let arr = v.split(':');
+    return +arr[0] * 3600 + +arr[1] * 60 + +arr[2];
+  }).reduce((t, v) => t + v, 0);
+  return totSecs / 3600 <= 24;
 }
